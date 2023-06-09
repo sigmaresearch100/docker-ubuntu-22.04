@@ -1,4 +1,4 @@
-name: Docker R for ubuntu-22.04
+name: Docker Apptainer in Ubuntu-22.04
 
 on:
   schedule:
