@@ -2,19 +2,20 @@ name: Docker Apptainer in Ubuntu-22.04
 
 on:
   schedule:
-    - cron:  '0 2 ? * SUN'
+    - cron: "0 0 * * 0"
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
       
       - name: Docker install
-        run: sudo bash ${PWD}/src/build.sh
+        run: sudo bash ${PWD}/tools/build.sh
